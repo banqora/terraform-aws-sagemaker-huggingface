@@ -130,7 +130,7 @@ resource "aws_sagemaker_model" "model_with_model_artifact" {
 
   primary_container {
     # CPU Image
-    image          = data.aws_sagemaker_prebuilt_ecr_image.deploy_image.registry_path
+    image          = var.custom_image != null ? var.custom_image : data.aws_sagemaker_prebuilt_ecr_image.deploy_image.registry_path
     model_data_url = var.model_data
     environment = {
       HF_TASK = var.hf_task
@@ -150,7 +150,7 @@ resource "aws_sagemaker_model" "model_with_hub_model" {
   tags               = var.tags
 
   primary_container {
-    image = data.aws_sagemaker_prebuilt_ecr_image.deploy_image.registry_path
+    image = var.custom_image != null ? var.custom_image : data.aws_sagemaker_prebuilt_ecr_image.deploy_image.registry_path
     environment = {
       HF_TASK              = var.hf_task
       HF_MODEL_ID          = var.hf_model_id

@@ -6,6 +6,12 @@ variable "name_prefix" {
   type        = string
 }
 
+variable "custom_image" {
+  description = "The ECR image URI you want to use for the container you want to use. Defaults to `None`. If you want to use a custom image, you can provide the `custom_image` as a variable."
+  type        = string
+  default     = null
+}
+
 variable "transformers_version" {
   description = "Transformers version you want to use for executing your model training code. Defaults to None. [List of supported versions](https://huggingface.co/docs/sagemaker/reference#inference-dlc-overview)"
   type        = string
