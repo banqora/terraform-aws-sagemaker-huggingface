@@ -15,6 +15,7 @@ variable "custom_image" {
 variable "transformers_version" {
   description = "Transformers version you want to use for executing your model training code. Defaults to None. [List of supported versions](https://huggingface.co/docs/sagemaker/reference#inference-dlc-overview)"
   type        = string
+  default     = null
 }
 
 variable "pytorch_version" {
