@@ -24,6 +24,8 @@ locals {
     "2.0.0-gpu"  = "2.0.0-transformers${var.transformers_version}-gpu-py310-cu118-ubuntu20.04"
     "2.1.0-cpu"  = "2.1.0-transformers${var.transformers_version}-cpu-py310-ubuntu22.04"
     "2.1.0-gpu"  = "2.1.0-transformers${var.transformers_version}-gpu-py310-cu118-ubuntu20.04"
+    "2.3.0-cpu"  = "2.3.0-transformers${var.transformers_version}-cpu-py311-ubuntu22.04"
+    "2.3.0-gpu"  = "2.3.0-transformers${var.transformers_version}-gpu-py311-cu121-ubuntu22.04"
   }
   tensorflow_image_tag = {
     "2.4.1-gpu" = "2.4.1-transformers${var.transformers_version}-gpu-py37-cu110-ubuntu18.04"
